@@ -9,8 +9,8 @@ arc:
         model-name: gpt-4o
         api-key: ${OPENAI_API_KEY}
         client: openai
-      - id: llama3:8b
-        modelName: llama3:8b
+      - id: llama3.3
+        modelName: llama3.3
         client: ollama
       - id: GPT-4o-Azure
         model-name: GPT-4o

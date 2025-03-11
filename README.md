@@ -22,8 +22,8 @@ arc:
         model-name: GPT-4o
         api-key: ${OPENAI_API_KEY}
         client: openai
-      - id: llama3:8b
-        modelName: llama3:8b
+      - id: llama3.3
+        modelName: llama3.3
         client: ollama
 ```
 
@@ -33,8 +33,9 @@ and change the model in the agent `assistant.agent.kts` file accordingly.
 ```kts
 agent {
     name = "assistant-agent"
-    model = { "llama3:8b" }
-
+    model = { "llama3.3" }
+    ...
+}
 ```
 
 #### 2. Start the Application
@@ -101,16 +102,19 @@ The folder contains a default agent `assistant-agent` that can be used as a temp
 The Arc Framework supports tracing with Micrometer Tracing. 
 See [Arc Tracing](https://eclipse.dev/lmos/docs/arc/tracing/) for more information.
 
-The project is already configured to use Micrometer Tracing with Zipkin.
+By default, tracing is disabled in the project. To enable it, update your application.yaml as follows:
+```yaml
+management:
+  tracing:
+    enabled: true
+```
 
-Start a zipkin server using docker (https://zipkin.io/pages/quickstart):
+To use tracing with [Zipkin](https://zipkin.io/pages/quickstart), start a Zipkin server using Docker:
 ```shell
 docker run -d -p 9411:9411 openzipkin/zipkin
 ```
 
-Open the Zipkin UI in your browser: http://localhost:9411/
-and watch the traces of your Arc Agents flow in.
-
+Open the Zipkin UI in your browser at [http://localhost:9411](http://localhost:9411/) to watch the traces of your Arc Agents in real time.
 
 ## Code of Conduct
 

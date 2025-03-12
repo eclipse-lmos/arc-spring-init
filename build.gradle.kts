@@ -7,7 +7,7 @@ plugins {
     kotlin("plugin.serialization") version "2.0.20"
     kotlin("plugin.spring") version "2.0.20"
     id("org.springframework.boot") version "3.3.3"
-    id("io.spring.dependency-management") version "1.1.6"
+    id("io.spring.dependency-management") version "1.1.7"
     id("org.graalvm.buildtools.native") version "0.10.2"
 }
 

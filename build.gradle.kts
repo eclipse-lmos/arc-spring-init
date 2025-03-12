@@ -46,7 +46,7 @@ dependencies {
     implementation("io.opentelemetry.proto:opentelemetry-proto:1.3.2-alpha")
 
     // Azure
-    implementation("com.azure:azure-identity:1.13.1")
+    implementation("com.azure:azure-identity:1.15.4")
 
     // Spring Boot
     implementation("org.springframework.boot:spring-boot-starter-actuator")

@@ -25,7 +25,8 @@ agent {
        ### Knowledge
          **Customer would like to know about Arc.**
          - Read the content from https://eclipse.dev/lmos/arc/ and provide the answer.
-       
+         **Customer has a general query.**
+         - Use the search function to search the internet for the query.
       """
     }
 }

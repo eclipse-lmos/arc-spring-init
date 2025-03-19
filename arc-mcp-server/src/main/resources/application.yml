@@ -1,0 +1,76 @@
+# SPDX-FileCopyrightText: 2025 Deutsche Telekom AG and others
+# SPDX-License-Identifier: Apache-2.0
+spring:
+  application:
+    name: Arc Agent
+  jackson:
+    default-property-inclusion: NON_NULL
+  main:
+    banner-mode: off
+    web-application-type: reactive
+  reactor:
+    context-propagation: auto
+  threads:
+    virtual:
+      enabled: true
+
+server:
+  port: 8888
+
+arc:
+  mcp:
+    tools:
+      expose: true
+  cors:
+    enabled: true
+  scripts:
+    enabled: true
+    folder: functions
+    hotReload:
+      enable: true
+      delay: PT1S
+  chat:
+    ui:
+      enabled: true
+  subscriptions:
+    events:
+      enable: true
+  ai:
+    clients:
+      - id: llama3.3
+        modelName: llama3.3
+        client: ollama
+      - id: GPT-4o-Azure
+        model-name: GPT-4o
+        url: ${AZURE_OPENAI_URL}
+        client: azure
+
+logging:
+  level:
+    root: WARN
+    org.eclipse.lmos.arc: DEBUG
+    org.eclipse.lmos.arc.app: WARN
+    ArcDSL: DEBUG
+
+management:
+  tracing:
+    enabled: false
+    sampling:
+      probability: 1.0
+  server:
+    port: 9999
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: prometheus,metrics,info,health
+  endpoint:
+    metrics:
+      enabled: true
+    health:
+      probes:
+        enabled: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true

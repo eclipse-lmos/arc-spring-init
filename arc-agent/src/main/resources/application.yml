@@ -32,6 +32,18 @@ arc:
   subscriptions:
     events:
       enable: true
+  ai:
+    clients:
+      - id: GPT-4o
+        model-name: gpt-4o
+        api-key: ${OPENAI_API_KEY}
+        client: openai
+      - id: llama3.3
+        modelName: llama3.3
+        client: ollama
+  mcp:
+    tools:
+      urls: http://localhost:8888
 
 logging:
   level:
@@ -51,13 +63,15 @@ management:
     web:
       base-path: /
       exposure:
-        include: prometheus,metrics,info,health
+        include: prometheus,metrics,info,health,shutdown
   endpoint:
     metrics:
       enabled: true
     health:
       probes:
         enabled: true
+    shutdown:
+      access: unrestricted
   prometheus:
     metrics:
       export:

@@ -5,3 +5,5 @@
 
 rootProject.name = "arc-spring-init"
 
+include("arc-mcp-server")
+include("arc-agent")

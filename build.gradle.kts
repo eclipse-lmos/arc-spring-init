@@ -27,7 +27,6 @@ kotlin {
 
 dependencies {
     val arcVersion = "0.121.0"
-    val langchain4jVersion = "0.36.2"
 
     // Arc
     implementation("org.eclipse.lmos:arc-azure-client:$arcVersion")
@@ -50,12 +49,6 @@ dependencies {
 
     // Spring Boot
     implementation("org.springframework.boot:spring-boot-starter-actuator")
-
-    // Langchain4j
-    implementation("dev.langchain4j:langchain4j-bedrock:$langchain4jVersion")
-    implementation("dev.langchain4j:langchain4j-google-ai-gemini:$langchain4jVersion")
-    implementation("dev.langchain4j:langchain4j-ollama:$langchain4jVersion")
-    implementation("dev.langchain4j:langchain4j-open-ai:$langchain4jVersion")
 
     // Metrics
     implementation("io.micrometer:micrometer-registry-prometheus")

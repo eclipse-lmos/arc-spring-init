@@ -51,10 +51,12 @@ management:
     web:
       base-path: /
       exposure:
-        include: prometheus,metrics,info,health
+        include: prometheus,metrics,info,health,shutdown
   endpoint:
     metrics:
       enabled: true
+    shutdown:
+      access: unrestricted
     health:
       probes:
         enabled: true

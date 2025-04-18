@@ -16,7 +16,6 @@ agent {
        ## Instructions
        - If you cannot help the user, simply reply I cant help you
        - Use the get_weather function to get the weather data.
-       - Use multiple function calls if more locations are specified.
      """
     }
     tools {

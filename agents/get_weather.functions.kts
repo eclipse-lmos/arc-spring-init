@@ -6,6 +6,9 @@
 function(
     name = "get_weather",
     description = "Returns the current weather.",
-) {
-    """The weather is sunny. A lovely 32 degrees celsius."""
+    params = types(
+        string("location", "the location to get the weather for."),
+    )
+) { (location) ->
+    """The weather is sunny in $location. A lovely 32 degrees celsius."""
 }

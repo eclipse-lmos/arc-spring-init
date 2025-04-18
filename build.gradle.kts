@@ -26,7 +26,7 @@ kotlin {
 }
 
 dependencies {
-    val arcVersion = "0.122.0-SNAPSHOT"
+    val arcVersion = "0.123.0-SNAPSHOT"
     val langchain4jVersion = "0.36.2"
 
     // Arc
@@ -38,6 +38,7 @@ dependencies {
     implementation("org.eclipse.lmos:arc-reader-html:$arcVersion")
     implementation("org.eclipse.lmos:arc-api:$arcVersion")
     implementation("org.eclipse.lmos:arc-graphql-spring-boot-starter:$arcVersion")
+    implementation("org.eclipse.lmos:arc-view-spring-boot-starter:$arcVersion")
 
     // Tracing
     implementation(platform("io.micrometer:micrometer-tracing-bom:1.4.4"))

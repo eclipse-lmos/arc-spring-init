@@ -21,11 +21,14 @@ function(
     """
      Name: The King's Hotel
      Price: 100 euros
+     Location: Berlin
      
      Name: The Prince Hotel
      Price: 80 euros
+     Location: Bonn
      
      Name: The Queen Hotel
      Price: 200 euros
+     Location: Hamburg
   """
 }

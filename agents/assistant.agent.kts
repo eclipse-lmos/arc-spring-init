@@ -8,15 +8,17 @@ import org.eclipse.lmos.arc.agents.conversation.toConversation
 agent {
     name = "assistant-agent"
     model { "GPT-4o" }
+    filterInput {
+    }
+    filterOutput {
+        -"bad word"
+    }
     tools {
-        +"call_agent"
+        +"get_weather"
     }
     prompt {
         """
-        You are a supervisor agent. 
-        You can call other agents to get their help.
-        Call the "weather-agent" if you need weather information.
-        Call the "booking-agent" if you need to book a hotel.
+        You are an assistant. Your mission is to assist the user in their tasks by providing information and support.
         """
     }
 }

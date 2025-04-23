@@ -43,7 +43,7 @@ dependencies {
     implementation("io.micrometer:micrometer-tracing-bridge-otel")
     implementation("io.opentelemetry:opentelemetry-exporter-zipkin")
     implementation("com.google.protobuf:protobuf-java:4.30.0")
-    implementation("io.opentelemetry.proto:opentelemetry-proto:1.3.2-alpha")
+    implementation("io.opentelemetry.proto:opentelemetry-proto:1.6.0-alpha-SNAPSHOT")
 
     // Azure
     implementation("com.azure:azure-identity:1.15.4")

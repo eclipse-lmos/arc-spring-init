@@ -26,7 +26,7 @@ kotlin {
 }
 
 dependencies {
-    val arcVersion = "0.124.0"
+    val arcVersion = "0.126.0"
     val langchain4jVersion = "0.36.2"
 
     // Arc

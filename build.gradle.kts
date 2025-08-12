@@ -45,7 +45,7 @@ dependencies {
     implementation("io.micrometer:micrometer-tracing-bridge-otel")
 
     // Azure
-    implementation("com.azure:azure-identity:1.15.4")
+    implementation("com.azure:azure-identity:1.17.0")
 
     // Spring Boot
     implementation("org.springframework.boot:spring-boot-starter-actuator")

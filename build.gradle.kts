@@ -65,7 +65,7 @@ dependencies {
 
     // Test
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
-    testImplementation("org.testcontainers:mongodb:1.20.6")
+    testImplementation("org.testcontainers:mongodb:1.21.3")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

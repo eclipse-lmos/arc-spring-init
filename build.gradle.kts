@@ -30,7 +30,7 @@ tasks.withType<Test> {
 }
 
 dependencies {
-    val arcVersion = "0.154.0"
+    val arcVersion = "0.179.0"
     val langchain4jVersion = "0.36.2"
 
     // Arc
@@ -50,6 +50,7 @@ dependencies {
 
     // Azure
     implementation("com.azure:azure-identity:1.15.4")
+    implementation("io.opentelemetry:opentelemetry-extension-kotlin:1.54.1")
 
     // Spring Boot
     implementation("org.springframework.boot:spring-boot-starter-actuator")

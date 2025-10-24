@@ -15,7 +15,7 @@ spring:
       enabled: true
 
 server:
-  port: 8080
+  port: 9095
 
 arc:
   #mcp:
@@ -40,6 +40,12 @@ arc:
   subscriptions:
     events:
       enable: true
+  ai:
+    clients:
+      - id: GPT-4o
+        model-name: gpt-4o
+        api-key: ${OPENAI_API_KEY}
+        client: openai
 
 logging:
   level:
@@ -57,7 +63,7 @@ management:
     sampling:
       probability: 1.0
   server:
-    port: 9090
+    port: 9094
   endpoints:
     web:
       base-path: /

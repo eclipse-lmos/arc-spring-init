@@ -2,10 +2,10 @@
 ##
 ## SPDX-License-Identifier: Apache-2.0
 ## Stage 1 : unpack fat-jar
-FROM amazoncorretto:21 as builder
+FROM amazoncorretto:21 AS builder
 
 USER root
-COPY build/libs/arc-spring-init-1.0.0.jar /deployments/app.jar
+COPY build/libs/arc-spring-init-0.1.0.jar /deployments/app.jar
 WORKDIR /deployments
 RUN java -Djarmode=layertools -jar app.jar extract
 # Ensure that the snapshot-dependencies folder is created even if there were no snapshot dependencies in the jar file (to avoid error when copying from that directory below)
@@ -22,6 +22,6 @@ COPY --from=builder /deployments/application/ ./
 COPY config ./config
 COPY agents ./agents
 
-EXPOSE 8080
-EXPOSE 9090
+EXPOSE 9094
+EXPOSE 9095
 ENTRYPOINT ["java", "org.springframework.boot.loader.launch.JarLauncher"]

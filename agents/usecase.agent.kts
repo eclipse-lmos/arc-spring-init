@@ -4,6 +4,7 @@
 
 import org.eclipse.lmos.arc.assistants.support.filters.UnresolvedDetector
 import org.eclipse.lmos.arc.assistants.support.filters.UseCaseResponseHandler
+import org.eclipse.lmos.arc.api.AgentRequest
 
 agent {
     name = "usecase-agent"
@@ -20,6 +21,10 @@ agent {
     }
     tools = AllTools
     prompt {
+        val conditionals = get<AgentRequest>().systemContext.mapNotNull {
+            if (it.value.toBoolean()) it.key else null
+        }.toSet()
+
         """
     ## Role and Responsibilities 
     You are a customer support agent.
@@ -57,7 +62,7 @@ agent {
 
     ----
      
-    ${useCases("use_cases.md", fallbackLimit = 4, conditions = emptySet())}
+    ${useCases("use_cases.md", fallbackLimit = 4, conditions = conditionals)}
     
 """
     }

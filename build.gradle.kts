@@ -21,7 +21,7 @@ java {
 
 kotlin {
     compilerOptions {
-        freeCompilerArgs.addAll("-Xjsr305=strict", "-Xcontext-receivers")
+        freeCompilerArgs.addAll("-Xjsr305=strict")
     }
 }
 
@@ -53,6 +53,7 @@ dependencies {
 
     // Spring Boot
     implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.ai:spring-ai-starter-mcp-server-webflux:1.1.1")
 
     // Langchain4j
     implementation("dev.langchain4j:langchain4j-bedrock:$langchain4jVersion")

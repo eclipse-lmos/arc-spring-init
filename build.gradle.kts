@@ -30,8 +30,8 @@ tasks.withType<Test> {
 }
 
 dependencies {
-    val arcVersion = "0.154.0"
-    val langchain4jVersion = "0.36.2"
+    val arcVersion = "0.203.0"
+    val langchain4jVersion = "1.8.0"
 
     // Arc
     implementation("org.eclipse.lmos:arc-azure-client:$arcVersion")

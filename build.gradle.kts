@@ -35,6 +35,7 @@ dependencies {
 
     // Arc
     implementation("org.eclipse.lmos:arc-azure-client:$arcVersion")
+    implementation("org.eclipse.lmos:arc-langchain4j-client:$arcVersion")
     implementation("org.eclipse.lmos:arc-spring-boot-starter:$arcVersion")
     implementation("org.eclipse.lmos:arc-assistants:$arcVersion")
     implementation("org.eclipse.lmos:arc-readers:$arcVersion")
